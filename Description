@@ -1,0 +1,119 @@
+# 🛒 Market Basket Analysis using Apriori Algorithm
+
+
+## 📖 Overview
+
+This project performs **Market Basket Analysis (MBA)** using the Apriori algorithm to identify relationships between products frequently purchased together.
+
+The goal is to transform transactional data into **actionable business insights** that can improve cross-selling, product placement, and promotional strategies in a retail environment.
+
+
+## 🎯 Objective
+
+* Identify frequently co-purchased product combinations
+* Generate association rules using Apriori
+* Evaluate rules using **Support, Confidence, and Lift**
+* Provide business recommendations based on customer purchase behavior
+
+
+## 📂 Dataset
+
+* Dataset: Groceries dataset
+* Total Transactions: ~9835
+* Each row represents items purchased in a single transaction
+
+
+## ⚙️ Tools & Technologies
+
+* Python
+* Pandas
+* NumPy
+* Apyori
+
+
+## 🔍 Methodology
+
+1. Data preprocessing and transaction formatting
+2. Applying the Apriori algorithm
+3. Generating association rules
+4. Filtering rules based on:
+
+   * Minimum Support: 0.003
+   * Minimum Confidence: 0.2
+   * Minimum Lift: 3
+5. Converting results into a structured DataFrame
+6. Exporting results for analysis
+
+
+## 📊 Sample Output
+
+| LHS                   | RHS            | Support | Confidence | Lift  |
+| --------------------- | -------------- | ------- | ---------- | ----- |
+| Instant food products | Hamburger meat | 0.003   | 0.32       | 11.42 |
+| Flour                 | Sugar          | 0.004   | 0.29       | 8.10  |
+| Citrus fruits         | Whole milk     | 0.005   | 0.34       | 7.18  |
+
+
+
+## 💡 Key Findings
+
+* The strongest association identified is between **Instant food products → hamburger meat**, with a **lift of 11.42**, indicating a very strong relationship. Customers purchasing instant food items are significantly more likely to also buy hamburger meat.
+
+* A strong pattern was observed between **flour → sugar**, with lift values above **8**, suggesting that baking-related products are frequently purchased together.
+
+* **Citrus fruits** showed multiple strong associations:
+
+  * With **whole milk** (lift ~7.18)
+  * With **other vegetables** (lift ~7.04)
+    This indicates that citrus fruits are commonly part of larger grocery baskets.
+
+* The rule **butter → other vegetables** (lift ~7.05) highlights that dairy products are often purchased alongside fresh produce.
+
+* The association **curd → whole milk** (lift ~6.89) reflects strong co-purchasing behavior within dairy products.
+
+* Several rules demonstrate **high confidence (30–40%)**, meaning there is a strong probability that the purchase of one product leads to another.
+
+* Products like **citrus fruits, flour, and instant food items** act as *trigger items*, influencing additional purchases in a transaction.
+
+
+## 🧠 Business Insights
+
+* 🛒 **Cross-Selling Opportunities**
+
+  * Recommend hamburger meat with instant food products
+  * Suggest sugar when customers purchase flour
+  * Promote whole milk alongside citrus fruits
+
+* 📦 **Product Bundling**
+
+  * Baking combos (flour + sugar)
+  * Dairy bundles (curd + milk)
+
+* 🏪 **Store Layout Optimization**
+
+  * Place related products closer together
+  * Organize dairy and fresh produce strategically
+
+* 🎯 **Targeted Marketing**
+
+  * Personalized recommendations
+  * Discount offers on frequently paired products
+
+
+## 📁 Project Structure
+
+```
+Market-Basket-Analysis/
+│
+├── data/
+│   └── groceries.csv
+│
+├── output/
+│   └── MBA_Analysis.csv
+│
+├── notebooks/
+│   └── MBAprojectPYTHON.ipynb
+
+## 👩‍💻 Author
+
+Amrita Yadav
